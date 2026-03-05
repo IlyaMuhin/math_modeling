@@ -11,16 +11,16 @@ t = np.linspace(0, 5, frames)
 def diff_function(z, t):
     x,vx, y, vy = z
     dx_dt = vx
-    dvx_dt = 0
+    dvx_dt = 10 - vx
     dy_dt = vy
-    dvy_dt = -g
+    dvy_dt = -g - vy
     
     return dx_dt,dvx_dt,dy_dt,dvy_dt
 # Пределы изменения переменной величины
 # В данной задаче переменной величиной является время
 
 # Определение начальных условий и параметров
-alpha = 80 * np.pi / 180
+alpha = 30 * np.pi / 180
 v0 = 15
 vx0 = v0 * np.cos(alpha)
 vy0 = v0 * np.sin(alpha)
@@ -49,4 +49,5 @@ edge = 15
 ax.set_xlim(0, edge)
 ax.set_ylim(0, edge)
 
-ani.save('animation.gif', writer = 'pillow')
+ani.save('animation2.gif', writer = 'pillow')
+
